@@ -16,7 +16,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/nami_image"
+            android:src="@drawable/image_anime"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,13 +37,16 @@
             tools:text="タイトルタイトルタイトル" />
 
         <TextView
-            android:id="@+id/text_company"
-            android:layout_width="wrap_content"
+            android:id="@+id/text_genre"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:ellipsize="end"
+            android:maxLines="1"
             app:layout_constraintStart_toStartOf="@+id/text_title"
             app:layout_constraintTop_toBottomOf="@+id/text_title"
-            tools:text="会社名会社名会社名"/>
+            tools:text="ジャンルジャンルジャンル" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

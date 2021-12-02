@@ -21,53 +21,53 @@ sealed interface Music: Contents {
                 when(range.random()) {
                     0 -> {
                         list.add(
-                            DWeekMusicImpl(
+                            AnimeMusicImpl(
                                 id = i.toLong(),
-                                title = "dのなんちゃら楽曲${(0..100).random()}",
+                                title = "aのアニメ楽曲${(0..100).random()}",
                                 artist = "レコチョク太郎",
                                 bitrate = if ((0..1).random() == 0) 128000 else 44100,
                                 duration = (10000000..20000000).random().toLong(),
                                 size = (1200000..2400000).random().toLong(),
-                                dNumber = Random((0..300).random()).nextInt()
+                                aNumber = Random((0..300).random()).nextInt()
                             )
                         )
                     }
                     1 -> {
                         list.add(
-                            PraypassMusicImpl(
+                            IdolMusicImpl(
                                 id = i.toLong(),
-                                title = "pのなんちゃら楽曲${(0..100).random()}",
+                                title = "iのアイドル楽曲${(0..100).random()}",
                                 artist = "レコチョク次郎",
                                 bitrate = if ((0..1).random() == 0) 128000 else 44100,
                                 duration = (10000000..20000000).random().toLong(),
                                 size = (1200000..2400000).random().toLong(),
-                                pNumber = Random((0..300).random()).nextInt()
+                                iNumber = Random((0..300).random()).nextInt()
                             )
                         )
                     }
                     2 -> {
                         list.add(
-                            MerketMusicImpl(
+                            GameMusicImpl(
                                 id = i.toLong(),
-                                title = "mのなんちゃら楽曲${(0..100).random()}",
+                                title = "gのゲーム楽曲${(0..100).random()}",
                                 artist = "レコチョク三郎",
                                 bitrate = if ((0..1).random() == 0) 128000 else 44100,
                                 duration = (10000000..20000000).random().toLong(),
                                 size = (1200000..2400000).random().toLong(),
-                                mNumber = Random((0..300).random()).nextInt()
+                                gNumber = Random((0..300).random()).nextInt()
                             )
                         )
                     }
                     3 -> {
                         list.add(
-                            TrachokuMusicImpl(
+                            RockMusicImpl(
                                 id = i.toLong(),
-                                title = "tのなんちゃら楽曲${(0..100).random()}",
+                                title = "rのロックな楽曲${(0..100).random()}",
                                 artist = "レコチョク四郎",
                                 bitrate = if ((0..1).random() == 0) 128000 else 44100,
                                 duration = (10000000..20000000).random().toLong(),
                                 size = (1200000..2400000).random().toLong(),
-                                tNumber = Random((0..300).random()).nextInt()
+                                rNumber = Random((0..300).random()).nextInt()
                             )
                         )
                     }
@@ -78,42 +78,42 @@ sealed interface Music: Contents {
     }
 }
 
-data class DWeekMusicImpl(
+data class AnimeMusicImpl(
     override val id: Long,
     override val title: String,
     override val artist: String,
     override val bitrate: Long,
     override val duration: Long,
     override val size: Long,
-    override val dNumber: Int,
-): Music, DWeek
+    override val aNumber: Int,
+): Music, Anime
 
-data class PraypassMusicImpl(
+data class IdolMusicImpl(
     override val id: Long,
     override val title: String,
     override val artist: String,
     override val bitrate: Long,
     override val duration: Long,
     override val size: Long,
-    override val pNumber: Int
-): Music, Praypass
+    override val iNumber: Int
+): Music, Idol
 
-data class MerketMusicImpl(
+data class GameMusicImpl(
     override val id: Long,
     override val title: String,
     override val artist: String,
     override val bitrate: Long,
     override val duration: Long,
     override val size: Long,
-    override val mNumber: Int
-): Music, Merket
+    override val gNumber: Int
+): Music, Game
 
-data class TrachokuMusicImpl(
+data class RockMusicImpl(
     override val id: Long,
     override val title: String,
     override val artist: String,
     override val bitrate: Long,
     override val duration: Long,
     override val size: Long,
-    override val tNumber: Int
-): Music, Trachoku
+    override val rNumber: Int
+): Music, Rock

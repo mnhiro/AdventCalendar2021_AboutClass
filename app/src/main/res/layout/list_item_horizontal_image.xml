@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="4"
-            tools:listitem="@layout/list_item_image"
+            tools:listitem="@layout/list_item_anime_image"
             tools:itemCount="4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

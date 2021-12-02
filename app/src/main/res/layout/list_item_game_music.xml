@@ -7,62 +7,58 @@
         android:id="@+id/item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/merket">
+        android:background="@color/game">
 
         <ImageView
-            android:id="@+id/image_content"
-            android:layout_width="100dp"
+            android:id="@+id/image_jacket"
+            android:layout_width="75dp"
             android:layout_height="75dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/luffy_image"
+            android:src="@drawable/image_game"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_genre"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_title"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@color/white"
-            android:ellipsize="end"
-            android:maxLines="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image_content"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="タイトルタイトルタイトル" />
-
-        <TextView
-            android:id="@+id/text_company"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@color/white"
             android:ellipsize="end"
             android:maxLines="1"
-            app:layout_constraintBottom_toTopOf="@+id/text_resolution"
-            app:layout_constraintEnd_toStartOf="@+id/image_content"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/text_bitrate"
+            app:layout_constraintStart_toEndOf="@+id/image_jacket"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="会社名会社名会社名" />
+            tools:text="タイトルタイトルタイトル" />
 
         <TextView
-            android:id="@+id/text_resolution"
-            android:layout_width="50dp"
+            android:id="@+id/text_bitrate"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_title"
+            app:layout_constraintTop_toBottomOf="@+id/text_title"
+            tools:text="bitratebitratebitrate" />
+
+        <TextView
+            android:id="@+id/text_genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:background="@color/white"
             android:ellipsize="end"
             android:maxLines="1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/text_company"
-            app:layout_constraintTop_toBottomOf="@+id/text_company"
-            tools:text="解像度解像度解像度" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ジャンルジャンルジャンル" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

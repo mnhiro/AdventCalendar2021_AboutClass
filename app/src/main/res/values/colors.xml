@@ -8,8 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="d_week">#8B0000</color>
-    <color name="praypass">#009688</color>
-    <color name="merket">#03A9F4</color>
-    <color name="trachoku">#D1149B</color>
+    <color name="anime">#8B0000</color>
+    <color name="idol">#009688</color>
+    <color name="game">#03A9F4</color>
+    <color name="rock">#D1149B</color>
 </resources>
