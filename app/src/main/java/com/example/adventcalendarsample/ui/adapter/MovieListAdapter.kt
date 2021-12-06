@@ -6,14 +6,14 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adventcalendarsample.BindingViewHolder
 import com.example.adventcalendarsample.R
-import com.example.adventcalendarsample.databinding.ListItemDWeekMovieBinding
-import com.example.adventcalendarsample.databinding.ListItemMerketMovieBinding
-import com.example.adventcalendarsample.databinding.ListItemPraypassMovieBinding
-import com.example.adventcalendarsample.model.DWeekMovieImpl
-import com.example.adventcalendarsample.model.MerketMovieImpl
+import com.example.adventcalendarsample.databinding.ListItemAnimeMovieBinding
+import com.example.adventcalendarsample.databinding.ListItemIdolMovieBinding
+import com.example.adventcalendarsample.databinding.ListItemGameMovieBinding
+import com.example.adventcalendarsample.model.AnimeMovieImpl
+import com.example.adventcalendarsample.model.GameMovieImpl
 import com.example.adventcalendarsample.model.Movie
-import com.example.adventcalendarsample.model.PraypassMovieImpl
-import com.example.adventcalendarsample.model.TrachokuMovieImpl
+import com.example.adventcalendarsample.model.IdolMovieImpl
+import com.example.adventcalendarsample.model.RockMovieImpl
 
 class MovieListAdapter(
     private val lifecycleOwner: LifecycleOwner,
@@ -27,10 +27,10 @@ class MovieListAdapter(
 
     override fun getItemViewType(position: Int): Int {
         return when (contents[position]) {
-            is DWeekMovieImpl -> R.layout.list_item_d_week_movie
-            is PraypassMovieImpl -> R.layout.list_item_praypass_movie
-            is MerketMovieImpl -> R.layout.list_item_merket_movie
-            is TrachokuMovieImpl -> R.layout.list_item_trachoku_movie
+            is AnimeMovieImpl -> R.layout.list_item_anime_movie
+            is IdolMovieImpl -> R.layout.list_item_idol_movie
+            is GameMovieImpl -> R.layout.list_item_game_movie
+            is RockMovieImpl -> R.layout.list_item_rock_movie
         }
     }
 
@@ -42,20 +42,20 @@ class MovieListAdapter(
 
     override fun onBindViewHolder(holder: BindingViewHolder, position: Int) {
         when (val content = contents[position]) {
-            is DWeekMovieImpl -> {
-                (holder.binding as ListItemDWeekMovieBinding).textTitle.text = content.title
-                holder.binding.textNumber.text = content.dNumber.toString()
+            is AnimeMovieImpl -> {
+                (holder.binding as ListItemAnimeMovieBinding).textTitle.text = content.title
+                holder.binding.textNumber.text = content.aNumber.toString()
             }
-            is PraypassMovieImpl -> {
-                (holder.binding as ListItemPraypassMovieBinding).textTitle.text = content.title
-                holder.binding.textCompany.text = content.serviceCompany
+            is IdolMovieImpl -> {
+                (holder.binding as ListItemIdolMovieBinding).textTitle.text = content.title
+                holder.binding.textCompany.text = content.genreTitle
             }
-            is MerketMovieImpl -> {
-                (holder.binding as ListItemMerketMovieBinding).textTitle.text = content.title
+            is GameMovieImpl -> {
+                (holder.binding as ListItemGameMovieBinding).textTitle.text = content.title
                 holder.binding.textResolution.text = "${content.resolution}p"
-                holder.binding.textCompany.text = content.serviceCompany
+                holder.binding.textCompany.text = content.genreTitle
             }
-            is TrachokuMovieImpl -> {
+            is RockMovieImpl -> {
                 // Adapterから指定するものは特になし
             }
         }

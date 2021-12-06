@@ -19,45 +19,45 @@ sealed interface Image: Contents {
                 when(range.random()) {
                     0 -> {
                         list.add(
-                            DWeekImageImpl(
+                            AnimeImageImpl(
                                 id = i.toLong(),
-                                title = "dのなんちゃら画像${(0..100).random()}",
+                                title = "aのアニメ画像${(0..100).random()}",
                                 isPdf = (0..1).random() != 0,
                                 size = (1200000..2400000).random().toLong(),
-                                dNumber = Random((0..300).random()).nextInt()
+                                aNumber = Random((0..300).random()).nextInt()
                             )
                         )
                     }
                     1 -> {
                         list.add(
-                            PraypassImageImpl(
+                            IdolImageImpl(
                                 id = i.toLong(),
-                                title = "pのへんちゃら画像${(0..100).random()}",
+                                title = "iのアイドル画像${(0..100).random()}",
                                 isPdf = (0..1).random() != 0,
                                 size = (1200000..2400000).random().toLong(),
-                                pNumber = Random((0..300).random()).nextInt()
+                                iNumber = Random((0..300).random()).nextInt()
                             )
                         )
                     }
                     2 -> {
                         list.add(
-                            MerketImageImpl(
+                            GameImageImpl(
                                 id = i.toLong(),
-                                title = "mのうんちゃら画像${(0..100).random()}",
+                                title = "gのゲーム画像${(0..100).random()}",
                                 isPdf = (0..1).random() != 0,
                                 size = (1200000..2400000).random().toLong(),
-                                mNumber = Random((0..300).random()).nextInt()
+                                gNumber = Random((0..300).random()).nextInt()
                             )
                         )
                     }
                     3 -> {
                         list.add(
-                            TrachokuImageImpl(
+                            RockImageImpl(
                                 id = i.toLong(),
-                                title = "tのらんちゃら画像${(0..100).random()}",
+                                title = "rのロックな画像${(0..100).random()}",
                                 isPdf = (0..1).random() != 0,
                                 size = (1200000..2400000).random().toLong(),
-                                tNumber = Random((0..300).random()).nextInt()
+                                rNumber = Random((0..300).random()).nextInt()
                             )
                         )
                     }
@@ -68,35 +68,35 @@ sealed interface Image: Contents {
     }
 }
 
-data class DWeekImageImpl(
+data class AnimeImageImpl(
     override val id: Long,
     override val title: String,
     override val isPdf: Boolean,
     override val size: Long,
-    override val dNumber: Int
-): Image, DWeek
+    override val aNumber: Int
+): Image, Anime
 
-data class PraypassImageImpl(
+data class IdolImageImpl(
     override val id: Long,
     override val title: String,
     override val isPdf: Boolean,
     override val size: Long,
-    override val pNumber: Int
-): Image, Praypass
+    override val iNumber: Int
+): Image, Idol
 
-data class MerketImageImpl(
+data class GameImageImpl(
     override val id: Long,
     override val title: String,
     override val isPdf: Boolean,
     override val size: Long,
-    override val mNumber: Int
-): Image, Merket
+    override val gNumber: Int
+): Image, Game
 
-data class TrachokuImageImpl(
+data class RockImageImpl(
     override val id: Long,
     override val title: String,
     override val isPdf: Boolean,
     override val size: Long,
-    override val tNumber: Int
-): Image, Trachoku
+    override val rNumber: Int
+): Image, Rock
 

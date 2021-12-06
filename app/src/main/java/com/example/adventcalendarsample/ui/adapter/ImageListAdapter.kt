@@ -7,12 +7,19 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adventcalendarsample.BindingViewHolder
 import com.example.adventcalendarsample.R
+import com.example.adventcalendarsample.databinding.ListItemAnimeMusicBinding
+import com.example.adventcalendarsample.databinding.ListItemGameMusicBinding
 import com.example.adventcalendarsample.databinding.ListItemHorizontalImageBinding
-import com.example.adventcalendarsample.model.DWeekImageImpl
+import com.example.adventcalendarsample.databinding.ListItemIdolMusicBinding
+import com.example.adventcalendarsample.model.AnimeImageImpl
+import com.example.adventcalendarsample.model.AnimeMusicImpl
+import com.example.adventcalendarsample.model.GameImageImpl
+import com.example.adventcalendarsample.model.GameMusicImpl
+import com.example.adventcalendarsample.model.IdolImageImpl
+import com.example.adventcalendarsample.model.IdolMusicImpl
 import com.example.adventcalendarsample.model.Image
-import com.example.adventcalendarsample.model.MerketImageImpl
-import com.example.adventcalendarsample.model.PraypassImageImpl
-import com.example.adventcalendarsample.model.TrachokuImageImpl
+import com.example.adventcalendarsample.model.RockImageImpl
+import com.example.adventcalendarsample.model.RockMusicImpl
 
 class ImageListAdapter(
     private val lifecycleOwner: LifecycleOwner,
@@ -25,13 +32,7 @@ class ImageListAdapter(
         }
 
     override fun getItemViewType(position: Int): Int {
-        return when (contents[position]) {
-            // 今回は1つ、動画同様サービスごとに分けれる
-            is DWeekImageImpl,
-            is PraypassImageImpl,
-            is MerketImageImpl,
-            is TrachokuImageImpl -> R.layout.list_item_horizontal_image
-        }
+        return R.layout.list_item_horizontal_image
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingViewHolder {

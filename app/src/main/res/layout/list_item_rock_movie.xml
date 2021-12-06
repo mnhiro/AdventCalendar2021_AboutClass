@@ -6,7 +6,7 @@
         android:id="@+id/item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/trachoku">
+        android:background="@color/rock">
 
         <ImageView
             android:id="@+id/image_content"
@@ -17,7 +17,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/luffy_image"
+            android:src="@drawable/image_rock"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

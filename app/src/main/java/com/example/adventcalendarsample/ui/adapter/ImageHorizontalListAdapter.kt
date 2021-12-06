@@ -6,13 +6,15 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adventcalendarsample.BindingViewHolder
 import com.example.adventcalendarsample.R
-import com.example.adventcalendarsample.databinding.ListItemImageBinding
-import com.example.adventcalendarsample.model.BusinessService
-import com.example.adventcalendarsample.model.DWeekImageImpl
+import com.example.adventcalendarsample.databinding.ListItemAnimeImageBinding
+import com.example.adventcalendarsample.databinding.ListItemGameImageBinding
+import com.example.adventcalendarsample.databinding.ListItemIdolImageBinding
+import com.example.adventcalendarsample.databinding.ListItemRockImageBinding
+import com.example.adventcalendarsample.model.AnimeImageImpl
 import com.example.adventcalendarsample.model.Image
-import com.example.adventcalendarsample.model.MerketImageImpl
-import com.example.adventcalendarsample.model.PraypassImageImpl
-import com.example.adventcalendarsample.model.TrachokuImageImpl
+import com.example.adventcalendarsample.model.GameImageImpl
+import com.example.adventcalendarsample.model.IdolImageImpl
+import com.example.adventcalendarsample.model.RockImageImpl
 
 class ImageHorizontalListAdapter(
     private val lifecycleOwner: LifecycleOwner,
@@ -27,10 +29,10 @@ class ImageHorizontalListAdapter(
     override fun getItemViewType(position: Int): Int {
         return when (contents[position]) {
             // 今回は1つ、動画同様サービスごとに分けれる
-            is DWeekImageImpl,
-            is PraypassImageImpl,
-            is MerketImageImpl,
-            is TrachokuImageImpl -> R.layout.list_item_image
+            is AnimeImageImpl -> R.layout.list_item_anime_image
+            is IdolImageImpl -> R.layout.list_item_idol_image
+            is GameImageImpl -> R.layout.list_item_game_image
+            is RockImageImpl -> R.layout.list_item_rock_image
         }
     }
 
@@ -41,8 +43,24 @@ class ImageHorizontalListAdapter(
     }
 
     override fun onBindViewHolder(holder: BindingViewHolder, position: Int) {
-        (holder.binding as ListItemImageBinding).textTitle.text = contents[position].title
-        holder.binding.textCompany.text = (contents[position] as BusinessService).serviceCompany
+        when (val content = contents[position]) {
+            is AnimeImageImpl -> {
+                (holder.binding as ListItemAnimeImageBinding).textTitle.text = content.title
+                holder.binding.textGenre.text = content.genreTitle
+            }
+            is IdolImageImpl -> {
+                (holder.binding as ListItemIdolImageBinding).textTitle.text = content.title
+                holder.binding.textGenre.text = content.genreTitle
+            }
+            is GameImageImpl -> {
+                (holder.binding as ListItemGameImageBinding).textTitle.text = content.title
+                holder.binding.textGenre.text = content.genreTitle
+            }
+            is RockImageImpl -> {
+                (holder.binding as ListItemRockImageBinding).textTitle.text = content.title
+                holder.binding.textGenre.text = content.genreTitle
+            }
+        }
         holder.binding.lifecycleOwner = lifecycleOwner
     }
 

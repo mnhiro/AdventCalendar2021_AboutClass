@@ -7,39 +7,37 @@
         android:id="@+id/item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/praypass">
+        android:background="@color/anime">
 
         <ImageView
-            android:id="@+id/image_content"
-            android:layout_width="150dp"
+            android:id="@+id/image_jacket"
+            android:layout_width="75dp"
             android:layout_height="75dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/luffy_image"
+            android:src="@drawable/image_anime"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_title"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:background="@color/white"
             android:ellipsize="end"
             android:maxLines="1"
-            app:layout_constraintBottom_toTopOf="@+id/text_company"
-            app:layout_constraintEnd_toStartOf="@+id/image_content"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/text_artist"
+            app:layout_constraintStart_toEndOf="@+id/image_jacket"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="タイトルタイトルタイトル" />
 
         <TextView
-            android:id="@+id/text_company"
+            android:id="@+id/text_artist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -48,6 +46,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/text_title"
             app:layout_constraintTop_toBottomOf="@+id/text_title"
-            tools:text="会社名会社名会社名" />
+            tools:text="アーティスト名アーティスト名" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
