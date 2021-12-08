@@ -3,7 +3,7 @@
 クローンしてあげると実行可能の状態になっていると思います。
 
 主にRecyclerViewを使った一覧を表示しています。
-どのような一覧画面を見れるかはQiitaのAdvent Calendar 2021　レコチョクの9日目を確認してみてください。
+どのような一覧画面を見れるかはQiitaの[レコチョクのAdvent Calendar 2021](https://qiita.com/advent-calendar/2021/recochoku)の[9日目]()を確認してみてください。
 
 ## ディレクトリ階層について
 - model
